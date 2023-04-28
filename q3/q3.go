@@ -11,6 +11,7 @@ package q3
 //Encontre o número máximo de peças de dominó que podem ser colocadas sob essas restrições.
 //
 //Se M ou N forem iguais ou menores que 0, a função deve retornar um erro.
+import "errors"
 
 func DominoPieces(m, n int) (int, error) {
 
@@ -21,7 +22,7 @@ func DominoPieces(m, n int) (int, error) {
 	}
 
 	if area%2 == 0 {
-		area %= 2
+		area /= 2
 	} else {
 		area -= 1
 	}
