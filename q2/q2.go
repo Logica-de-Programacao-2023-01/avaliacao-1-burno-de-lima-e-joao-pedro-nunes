@@ -11,8 +11,21 @@ package q2
 //indica o contrário.
 //
 //Ajude os amigos a encontrar o número de problemas para os quais eles escreverão uma solução.
-
 func ProblemsSolved(answers [][3]bool) int {
-	// Seu código aqui
-	return 0
+	var count int
+
+	for _, ans := range answers {
+		var correct bool = true
+		for _, a := range ans {
+			if !a {
+				correct = false
+				break
+			}
+		}
+		if correct {
+			count++
+		}
+	}
+
+	return count
 }
