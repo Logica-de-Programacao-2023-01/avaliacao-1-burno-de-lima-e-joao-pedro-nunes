@@ -12,33 +12,16 @@ package q1
 //
 //A função deve retornar um valor booleano, indicando se é possível ou não dividir a melancia da forma desejada. Se o peso
 //da melancia for menor ou igual a 0, a função deve retornar um erro.
+import "errors"
 
 func DivideWatermelon(weight int) (bool, error) {
-	var true, false bool
-	var halfweight int
-
 	if weight <= 0 {
 		return false, errors.New("peso invalido")
-
 	}
+
 	if weight%2 == 0 {
 		return true, nil
-	}
-	if weight%2 != 0 {
+	} else {
 		return false, nil
 	}
-	halfweight = weight / 2
-
-	if halfweight%2 == 0 {
-		return true, nil
-	}
-	halfweight -= 1
-	if halfweight%2 == 0 {
-		return true, nil
-	}
-
-	return false, nil
-}
-
-
 }
