@@ -16,12 +16,8 @@ import "errors"
 
 func DivideWatermelon(weight int) (bool, error) {
 	if weight <= 0 {
-		return false, errors.New("peso invalido")
+		return false, errors.New("o peso do melão deve ser maior que zero")
 	}
 
-	if weight%2 == 0 {
-		return true, nil
-	} else {
-		return false, nil
-	}
+	return weight%2 == 0, nil
 }
