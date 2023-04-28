@@ -13,8 +13,27 @@ package q5
 //programa na sequência de caracteres inicial.
 //
 //Ajude Pedro a lidar com esta tarefa fácil.
+import "strings"
 
 func ProcessString(s string) string {
-	// Seu código aqui
-	return ""
+	x := strings.Split(s, "")
+
+	for i := 0; i < len(x); i++ {
+		x[i] = strings.ToLower(x[i])
+	}
+
+	consoantes := []string{}
+	vogais := "aeiou"
+	for _, y := range x {
+		if !strings.ContainsAny(y, vogais) {
+			consoantes = append(consoantes, y)
+		}
+	}
+	finalstring := ""
+	for i := 0; i < len(consoantes); i++ {
+		finalstring += "."
+		finalstring += consoantes[i]
+	}
+
+	return finalstring
 }

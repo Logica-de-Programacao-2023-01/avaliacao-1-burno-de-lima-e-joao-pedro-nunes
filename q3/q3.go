@@ -13,6 +13,18 @@ package q3
 //Se M ou N forem iguais ou menores que 0, a função deve retornar um erro.
 
 func DominoPieces(m, n int) (int, error) {
-	// Seu código aqui
-	return 0, nil
+
+	area := n * m
+
+	if m == 0 || n == 0 {
+		return 0, errors.New("Ocorreu um erro")
+	}
+
+	if area%2 == 0 {
+		area %= 2
+	} else {
+		area -= 1
+	}
+
+	return area / 2, nil
 }
