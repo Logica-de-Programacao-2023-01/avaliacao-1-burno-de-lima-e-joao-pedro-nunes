@@ -11,21 +11,21 @@ package q3
 //Encontre o número máximo de peças de dominó que podem ser colocadas sob essas restrições.
 //
 //Se M ou N forem iguais ou menores que 0, a função deve retornar um erro.
-import "errors"
 
-func DominoPieces(m, n int) (int, error) {
 
-	area := n * m
+import "fmt"
 
-	if m == 0 || n == 0 {
-		return 0, errors.New("Ocorreu um erro")
+func CalculateSum(numbers []int) int {
+	sum := 0
+	for _, num := range numbers {
+		sum += num
 	}
-
-	if area%2 == 0 {
-		area /= 2
-	} else {
-		area -= 1
-	}
-
-	return area / 2, nil
+	return sum
 }
+
+func main() {
+	numbers := []int{1, 2, 3, 4, 5}
+	sum := CalculateSum(numbers)
+	fmt.Println(sum)
+}
+
