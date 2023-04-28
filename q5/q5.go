@@ -14,6 +14,10 @@ package q5
 //
 //Ajude Pedro a lidar com esta tarefa fácil.
 
+package main
+
+import "strings"
+
 func ProcessString(s string) string {
 	x := strings.Split(s, "")
 
@@ -24,9 +28,9 @@ func ProcessString(s string) string {
 	consoantes := []string{}
 	vogais := "aeiou"
 	for _, y := range x {
-		if strings.ContainsAny(y, vogais) {
+		if !strings.ContainsAny(y, vogais) {
+			consoantes = append(consoantes, y)
 		}
-		consoantes = append(consoantes, y)
 	}
 	finalstring := ""
 	for i := 0; i < len(consoantes); i++ {
