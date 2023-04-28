@@ -12,16 +12,19 @@ package q3
 //
 //Se M ou N forem iguais ou menores que 0, a função deve retornar um erro.
 
+func DominoPieces(m, n int) (int, error) {
 
-import "fmt"
+	area := n * m
 
-func CalculateSum(numbers []int) int {
-	sum := 0
-	for _, num := range numbers {
-		sum += num
+	if m == 0 || n == 0 {
+		return 0, errors.New("Ocorreu um erro")
 	}
-	return sum
+
+	if area%2 == 0 {
+		area %= 2
+	} else {
+		area -= 1
+	}
+
+	return area / 2, nil
 }
-
-
-
